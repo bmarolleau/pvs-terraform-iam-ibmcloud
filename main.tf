@@ -11,7 +11,7 @@ data "ibm_resource_group" "group" {
 resource "ibm_iam_access_group_policy" "policy1" {
 
 	access_group_id = ibm_iam_access_group.accgroup.id
-	roles = ["Viewer", "Operator","Editor" ]
+	roles = ["Viewer", "Operator","Editor"  ]
 	resources {
 		resource_type = "resource-group"
         	resource = data.ibm_resource_group.group.id
@@ -20,7 +20,7 @@ resource "ibm_iam_access_group_policy" "policy1" {
 
 resource "ibm_iam_access_group_policy" "policy2" {
         access_group_id = ibm_iam_access_group.accgroup.id
-	roles = ["Viewer", "Operator","Editor", "Reader","Manager"]
+	roles = ["Viewer", "Operator","Editor", "Reader","Manager", "Administrator"]
         resources {
 	 	resource_group_id = data.ibm_resource_group.group.id
 		service = "power-iaas"

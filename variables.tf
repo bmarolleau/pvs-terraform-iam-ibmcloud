@@ -14,7 +14,7 @@ variable "ibmcloud_zone" {
 
 variable "poweriaas_users" {
     description = "Array,list of IBMIDs"
-    default     = ["benoit.marolleau@gmail.com", "thierry.huche@fr.ibm.com","fred.dubois@fr.ibm.com", "ludovic_menard@fr.ibm.com"]
+    default     = ["thierryhuche@gmail.com", "benoit.marolleau@gmail.com", "thierry.huche@fr.ibm.com","fred.dubois@fr.ibm.com", "ludovic_menard@fr.ibm.com"]
 }
 
 variable "poweriaas_resourcegrp_name" {
