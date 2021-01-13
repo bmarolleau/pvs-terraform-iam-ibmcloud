@@ -36,10 +36,11 @@ resource "ibm_iam_user_invite" "invite_user" {
     users = var.poweriaas_users
     access_groups = [ ibm_iam_access_group.accgroup.id ]
 }
-resource "ibm_iam_access_group_members" "accgroupmem" {
-  depends_on           = [ibm_iam_user_invite.invite_user]
-  access_group_id = ibm_iam_access_group.accgroup.id
-  ibm_ids         = var.poweriaas_users
-  iam_service_ids = [ibm_iam_service_id.power-service.id]
-}
+## UPDATED 2021: for some reasons, terraform-managed access group members does not work. Let comment out this part for now. It is still functional without it :) 
+#resource "ibm_iam_access_group_members" "accgroupmem" {
+#  depends_on           = [ibm_iam_user_invite.invite_user]
+#  access_group_id = ibm_iam_access_group.accgroup.id
+# ibm_ids         = var.poweriaas_users
+#  iam_service_ids = [ibm_iam_service_id.power-service.id]
+#}
 
